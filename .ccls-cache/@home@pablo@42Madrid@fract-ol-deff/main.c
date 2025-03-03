@@ -72,7 +72,7 @@ int	managerrors(int argc, char **argv)
 		return (1);
 	if (!ft_strcmp(argv[1], "julia") && argc != 4)
 		return (1);
-	if (!ft_strcmp(argv[1], "julia") && (checkdouble(argv[2]) != 0 || checkdouble(argv[3]) != 0))
+	if (!ft_strcmp(argv[1], "julia") && (checkdouble(argv[2]) != 0 || checkdouble(argv[2])))
 		return (1);
 	return(0);
 }
