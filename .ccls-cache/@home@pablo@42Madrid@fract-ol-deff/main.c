@@ -53,6 +53,8 @@ int	checkdouble(char *argv)
 	int	c;
 
 	c = 0;
+	if (argv[c] == '-')
+		c++;
 	while (argv[c] >= '0' && argv[c] <= '9')
 		c++;
 	if (argv[c] == '.')
@@ -72,7 +74,7 @@ int	managerrors(int argc, char **argv)
 		return (1);
 	if (!ft_strcmp(argv[1], "julia") && argc != 4)
 		return (1);
-	if (!ft_strcmp(argv[1], "julia") && (checkdouble(argv[2]) != 0 || checkdouble(argv[2])))
+	if (!ft_strcmp(argv[1], "julia") && (checkdouble(argv[2]) != 0 || checkdouble(argv[3]) != 0))
 		return (1);
 	return(0);
 }
@@ -89,7 +91,7 @@ int	main(int argc, char **argv)
 	y = 0;
 	if (managerrors(argc, argv) == 1)
 	{
-		ft_printf("Los fractales disponibles son: Mandelbrot y Julia\n");
+		ft_printf("Los fractales disponibles son: mandelbrot y julia\n");
 		exit(1);
 	}
 	data = construct_fracdata(z, x, y, argv);
